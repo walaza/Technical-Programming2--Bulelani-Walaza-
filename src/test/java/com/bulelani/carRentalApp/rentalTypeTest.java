@@ -1,10 +1,12 @@
+package com.bulelani.carRentalApp;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-import com.bulelani.carrentalapp.model.returnCar;
+import com.bulelani.carrentalapp.model.rentalType;
 import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
@@ -17,9 +19,9 @@ import org.testng.annotations.Test;
  *
  * @author bulelani
  */
-public class returnCarTest {
+public class rentalTypeTest {
     
-    public returnCarTest() {
+    public rentalTypeTest() {
     }
 
     @BeforeClass
@@ -27,12 +29,14 @@ public class returnCarTest {
     }
     @Test
     public void testCreation() throws Exception{
-        returnCar r = new returnCar.Builder("05/04/14").custName("Bule").build();
-        Assert.assertEquals(r.getReturndate(),"05/04/14");
-        Assert.assertEquals(r.getCustName(),"Bule");
+        rentalType rt = new rentalType.Builder("Mazda").luxury("Porsche").trucks("Man").vans("Mazda BT-50").build();
+         Assert.assertEquals(rt.getComfortCars(),"Mazda");
+        Assert.assertEquals(rt.getLuxury(),"Porsche");
+        Assert.assertEquals(rt.getTrucks(), "Man");
+        Assert.assertEquals(rt.getVans(), "Mazda BT-50");
     }
     @Test
     public void testUpdate() throws Exception {
-          returnCar r = new returnCar.Builder("05/05/14").custName("Bule").build();
+        rentalType rt = new rentalType.Builder("chevrolet").luxury("Jaguar").trucks("Man").vans("Mazda BT-50").build(); 
     }
 }

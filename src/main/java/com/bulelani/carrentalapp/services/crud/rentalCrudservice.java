@@ -4,12 +4,15 @@
  * and open the template in the editor.
  */
 
-package com.bulelani.carrentalapp.model;
+package com.bulelani.carrentalapp.services.crud;
+
+import com.bulelani.carrentalapp.model.rental;
+import com.bulelani.carrentalapp.services.CrudService;
 
 /**
  *
  * @author bulelani
  */
-public interface vehicle {
+public interface rentalCrudservice extends CrudService<rental, String>{
     
 }

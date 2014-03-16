@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 
-import com.bulelani.carrentalapp.model.hiredVehicles;
+package com.bulelani.carRentalApp;
+
+import com.bulelani.carrentalapp.model.addSUV;
 import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
@@ -17,23 +19,24 @@ import org.testng.annotations.Test;
  *
  * @author bulelani
  */
-public final class hiredVehiclesTest {
+public class addSUVTest {
     
-    public hiredVehiclesTest() {
+    public addSUVTest() {
     }
-
     @BeforeClass
     public static void setUp() throws Exception {
     }
     @Test
-    public void testCreation() throws Exception {
-        hiredVehicles h = new hiredVehicles.Builder("Ford").regNum("NCW 14202").category("Comfort").build();
-        Assert.assertEquals(h.getName(),"Ford");
-        Assert.assertEquals(h.getRegNum(),"NCW 14202");
-        Assert.assertEquals(h.getCategory(), "Comfort");
+    public void testCreation() throws Exception{
+        addSUV a = new addSUV.Builder("JEEP").colour("Blue").model("Compass").numOfAdded(5).build();
+        Assert.assertEquals(a.getSuvVendor(), "JEEP");
+        Assert.assertEquals(a.getSuvVendor(), "JEEP");
+        Assert.assertEquals(a.getColour(), "Blue");
+        Assert.assertEquals(a.getModel(), "Compass");
+        Assert.assertEquals(5, 5);
     }
     @Test
     public void testUpdate() throws Exception {
-        hiredVehicles h = new hiredVehicles.Builder("Mazda").regNum("NCX 14202").category("Comfort").build();
-    }
+      addSUV a = new addSUV.Builder("JEEP").colour("White").model("Cherokee").numOfAdded(5).build();
+    }    
 }

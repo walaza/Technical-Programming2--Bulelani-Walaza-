@@ -29,6 +29,7 @@ public final class insurance {
         private String regNum;
         private String carName;
         private String insureType;
+        String name;
        
         public Builder(String regNum){
             this.regNum = regNum;

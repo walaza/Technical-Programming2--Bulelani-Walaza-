@@ -1,10 +1,12 @@
+package com.bulelani.carRentalApp;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-import com.bulelani.carrentalapp.model.pickupACar;
+import com.bulelani.carrentalapp.model.returnCar;
 import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
@@ -17,23 +19,22 @@ import org.testng.annotations.Test;
  *
  * @author bulelani
  */
-public class pickCarTest {
-    private pickupACar pickupACar;
+public class returnCarTest {
     
-    public pickCarTest() {
+    public returnCarTest() {
     }
+
     @BeforeClass
     public static void setUpClass() throws Exception {
     }
     @Test
     public void testCreation() throws Exception{
-       pickupACar p= new pickupACar.Builder("Xolani").date("10/03/14").place("Grand Parade").build();
-       Assert.assertEquals(p.getCustName(),"Xolani");
-        Assert.assertEquals(p.getDate(),"10/03/14");
-        Assert.assertEquals(p.getPlace(), "Grand Parade");
+        returnCar r = new returnCar.Builder("05/04/14").custName("Bule").build();
+        Assert.assertEquals(r.getReturndate(),"05/04/14");
+        Assert.assertEquals(r.getCustName(),"Bule");
     }
     @Test
     public void testUpdate() throws Exception {
-        pickupACar p= new pickupACar.Builder("Thera").date("11/03/14").place("Parade").build();
+          returnCar r = new returnCar.Builder("05/05/14").custName("Bule").build();
     }
 }
